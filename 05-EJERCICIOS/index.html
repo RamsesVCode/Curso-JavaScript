@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios</title>
+    <style>
+        #data{
+            width: 250px;
+            height: 250px;
+            border:1px solid crimson;
+            margin-top: 10px;
+            display: none;
+        }
+        h3{
+            margin:0 auto;
+            text-align: center;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.Formulario con los campos nombre, apellidos, edad
+        2.Boton de enviar el formulario
+        3.Mostrar datos por pantalla
+        4.Validación del formulario
+        
+     -->
+    <form action="" id="form">
+        Nombre:<br>
+        <input type="text" name="nombre" id="name"><br>
+        Apellidos:<br>
+        <input type="text" name="apellidos" id="surname"><br>
+        Edad:<br>
+        <input type="text" name="edad" id="age"><br>
+        <input type="submit" value="enviar">
+    </form>
+    <div id="data">
+        <h3>Mis datos</h3>
+    </div>
+    <script>
+        const $form = document.getElementById('form');
+        const $data = document.getElementById('data');
+        const $name = document.getElementById('name');
+        const $surname = document.getElementById('surname');
+        const $age = document.getElementById('age');
+
+        //VALIDACION
+        $name.addEventListener('blur',()=>{
+            if($name.value.length<=5){
+                $name.style.border = '1px solid red';
+            }
+        });
+        $surname.addEventListener('blur',()=>{
+            if($surname.value.length<=8){
+                $surname.style.border = '1px solid red';
+            }
+        });
+        $age.addEventListener('blur',()=>{
+            let edad = parseInt($name.value);
+            if(isNaN(edad) || $age.value.lenght == 0){
+                $age.style.border = '1px solid red';
+            }
+        });
+        $form.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            let datos = new FormData($form);
+            $data.style.display='block';
+            $data.append(`${
+                datos.get('nombre')+','+
+                datos.get('apellidos')+', '+
+                datos.get('edad')
+            }`);
+        }); 
+    </script>
+</body>
+</html>

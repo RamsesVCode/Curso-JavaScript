@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fechas</title>
+</head>
+<body>
+    <div class="card">
+        <span id="card-time"></span><br>
+        <span id="card-date"></span>
+    </div>
+    <script>
+        const $card_time = document.getElementById('card-time');
+        const $card_date = document.getElementById('card-date');
+        const mes = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+        const dia = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+        setInterval(()=>{
+            let fecha = new Date();
+            let time = '';
+            time  += `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+            $card_time.innerHTML = time;
+        },1000);
+        let data = new Date();
+        let date = '';
+        date += `${dia[data.getDay()]} ${data.getDate()} ${mes[data.getMonth()]} ${data.getFullYear()}`;
+        $card_date.append(date)
+    </script>
+</body>
+</html>

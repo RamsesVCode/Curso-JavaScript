@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos en Jquery</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            transition: all .8s;
+            cursor: pointer;
+        }
+        form{
+            width: 200px;
+            height: 200px;
+            background-color: #CCC;
+        }
+        form .input{
+            outline: none;
+        }
+        .data{
+            display: none;
+        }
+        .mouse{
+            width: 30px;
+            height: 30px;
+            background-color: crimson;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .mouse.uno{
+            background-color: yellow;
+            top:0;
+            left:0;
+        }
+        .mouse.dos{
+            background-color: green;
+            top:10px;
+            left:10px;
+        }
+        .mouse.tres{
+            background-color: blue;
+            top:20px;
+            left:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Soy una caja
+    </div><br>
+    <form action="" id="form">
+        <input class="input" type="text" placeholder="hola">
+        <input type="submit" value="Guardar">
+    </form>
+    <div class="data">
+        Holas
+    </div>
+    <div class="mouse uno"></div>
+    <!--<div class="mouse uno"></div>
+    <div class="mouse dos"></div>
+    <div class="mouse tres"></div> -->
+    <script>
+        'use strict'
+        const $input = $('.input');
+        const $box = $('.box');
+        const $form = $('#form');
+        const $data = $('.data');
+        const $mouse = $('.mouse');
+        $box.mouseover(()=>{
+            $box.css('background','green');
+        })
+        $box.mouseout(()=>{
+            $box.css('background','blue');
+        })
+        $input.focus(()=>{
+            $input.css('border','4px solid green');
+            $data.hide();
+        })
+        $input.blur(()=>{
+            let size = $input.val().length;
+            if(size<=5)
+                $input.css('border','4px solid red');
+            else{
+                $input.css('border','1px solid gray');
+            }
+            $data.text($input.val()).show();
+        })
+        $box.mousedown(()=>{
+            $box.css('border','4px solid orange');
+        })
+        $box.mouseup(()=>{
+            $box.css('border','4px solid crimson');
+        })
+        $(document).mousemove(()=>{
+            // console.log(event.clientX);
+            // console.log(event.clientY);
+            let x = event.clientX;
+            let y = event.clientY;
+            console.log(x);
+            console.log(y);
+            let v = `translate(${x},${y})`;
+            console.log(v);
+            $mouse.css('transform',`translate(${x}px,${y}px)`)
+        })
+        $('body').css('cursor','none');
+        
+    </script>
+</body>
+</html>

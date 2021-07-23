@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage</title>
+</head>
+<body>
+    <div class="cont">
+
+    </div>
+    <script>
+        const $cont = document.querySelector('.cont');
+        //Local storage
+        // localStorage.setItem('curso','Javascript');
+        // let curso = localStorage.getItem('curso');
+        // //Guardamos
+        // $cont.innerHTML = curso;
+
+        var usuario = {
+            nombre : 'Edward',
+            edad : 21
+        }
+        // console.log(usuario)
+        localStorage.setItem('usuario',JSON.stringify(usuario))
+        let user = JSON.parse(localStorage.getItem('usuario'));
+        console.log(user)
+        $cont.innerHTML = user.nombre+', '+user.edad;
+    </script>
+</body>
+</html>

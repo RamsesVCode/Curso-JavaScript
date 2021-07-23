@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <style>
+        #container{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #form{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="container" onclick="cambia(this)">
+
+    </div> -->
+    <!-- <div id="container" onmouseover="cambia(this)">
+
+    </div> -->
+    <!-- <form action="">
+        Nombre:<br>
+        <input type="text" id="form">
+    </form> -->
+    <div id="container">
+
+    </div>
+    <script>
+        // $container = document.getElementById('container');
+        //Eventos del raton
+        // function cambia(cont){
+        //     cont.style.background = 'green';
+        //     cont.style.transform = 'scale(.8)';
+        // }
+        // function cambia(cont){
+        //     cont.style.transform = 'translate(250px,500px)';
+        // }
+        // $form = document.getElementById('form');
+        // $form.addEventListener('focus',()=>{
+        //     console.log('Ok');
+        // })
+        // $form.addEventListener('blur',()=>{
+        //     console.log($form.value);
+        //     if($form.value.length<=6){
+        //         $form.style.border = '1px solid red';
+        //     }
+        // })
+        // $form.addEventListener('keydown',(event)=>{
+        //     console.log('Presiona la tecla: '+event.key);
+        // })
+        // $form.addEventListener('keypress',(event)=>{
+        //     console.log('Presiona la tecla: '+event.key);
+        // })
+        $container = document.getElementById('container');
+        // $container.addEventListener('click',()=>{
+        //     setTimeout(()=>{
+        //         $container.style.transform = 'translate(250px)';
+        //     },2000)
+        // })
+        $container.addEventListener('click',()=>{
+            setInterval(()=>{
+                $container.innerHTML=`<li>${Math.random()}</li>`;
+            },2000)
+        })
+    </script>
+</body>
+</html>

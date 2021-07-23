@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <style>
+        .container{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: 1s;
+        }
+        .green{
+            transform: translate(250px);
+        }
+    </style>
+</head>
+<body>
+
+    <p id="p1">Hola 1</p>
+    <p id="p2">Hola 2</p>
+    <p id="p3">Hola 3</p>
+    <div class="container">
+        Soy grande
+    </div>
+    <ul>
+        <li><a href="http://" title="tit1">Ir a facebook</a></li>
+        <li><a href="http://" title="tit1">Ir a google</a></li>
+        <li><a href="http://" title="tit1">Ir a instagram</a></li>
+        <li><a href="http://" title="tit2">Ir a wathsapp</a></li>
+        <li><a href="http://" title="tit3">Ir a Mathlab</a></li>
+    </ul>
+    <script>
+        'use strict'
+        // $(document).ready(()=>{
+        //     console.log(this)
+        // })
+        const p1 = $('#p1');
+        const p2 = $('#p2');
+        const p3 = $('#p3');
+        const div = $('div');
+        const tit = $("[title='tit1']");
+
+        p1.css('background','red').css('color','white');
+        p2.css('transform','translate(250px)');
+
+        const $cont = $('.container');
+        // $cont.css('width','500px').css('height','300px')
+        // .css('background','red').css('text-align','center');
+        $cont.click(()=>{
+            // $(this).addClass('green');
+            $cont.toggleClass('green');
+            // $cont.css('background-color','green');
+        });
+        tit.css('font-size','2em');
+    </script>    
+</body>
+</html>

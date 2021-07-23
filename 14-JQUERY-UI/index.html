@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JQUERY UI</title>
+    <style>
+        .elemento{
+            width: 300px;
+            height: 200px;
+            border:4px solid black;
+            background-color: lightblue;
+            margin: 10px;
+            float:left;
+        }
+        .list{
+            list-style: none;
+        }
+        .list li{
+            width: 80%;
+            padding: 20px;
+            border:1px solid #CCC;
+            cursor: pointer;
+        }
+        ul .ui-selecting{
+            background-color: red;
+        }
+        ul .ui-selected{
+            background-color: green;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            border:3px solid red;
+        }
+        .area{
+            width: 300px;
+            height: 300px;
+            border:3px solid green;
+        }
+        .cont{
+            margin-top:10px;
+            width: 300px;
+            height: 300px;
+            border:3px solid blue;
+            display: none;
+        }
+        </style>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    
+</head>
+<body>
+    <!-- DRAGGABLE -->
+    <!-- <div class="elemento">
+        Hola soy un elemento de la web
+    </div>
+    <div class="elemento">
+        Hola soy un elemento de la web
+    </div>
+    <div class="elemento">
+        Hola soy un elemento de la web
+    </div> -->
+    <!-- ------------------------- -->
+    <!-- LISTA PARA SELECT -->
+    <!-- <ul class="list">
+        <li>GTA 5</li>
+        <li>WARZONE</li>
+        <li>LEFT 4 DEAD</li>
+    </ul> -->
+    <!-- <div class="item"></div>
+    <div class="area"></div> -->
+    <!-- <button class="mostrar">Mostrar</button>
+    <div class="cont"></div> -->
+    
+    <!-- Widgets -->
+    <h3>Tooltip</h3>
+    <a href="" title="acceder a los datos" id="datos">Datos</a>
+    <script>
+        //Mover el elemento
+        $('.elemento').draggable();
+        //Redimensionar el elemento
+        $('.elemento').resizable();
+        //Select table - para elementos de lista
+        // $('.list').selectable();
+        //Listar los elementos
+        $('.list').sortable();
+        //Eliminar
+        $('.item').draggable();
+        $('.area').droppable({
+            drop:function(){
+                console.log('Dentro del area');
+            }
+        });
+        //Efectos
+        $('.mostrar').click(()=>{
+            // $('.cont').toggle('fade');
+            // $('.cont').toggle('hide');
+            // $('.cont').toggle('scale');
+            // $('.cont').toggle('slide');
+            // $('.cont').toggle('blind');
+        })
+        $(document).tooltip();
+    </script>   
+</body>
+</html>

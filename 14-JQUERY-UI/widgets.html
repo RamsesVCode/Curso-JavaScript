@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JQUERY UI</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    
+</head>
+<body>
+    <h3>Cuadros de dialogo</h3>
+    <div class="pop-up" title="estas seguro :)">
+        Si continuas en el curso aprenderas mucho de JS
+    </div>
+
+    <button title="acceder a los datos" id="datos">Datos</button>
+    <button title="acceder a los datos" id="datos">Datos</button>
+    <button title="acceder a los datos" id="datos">Datos</button>
+    <input type="text" id="cal">
+    <script>
+        //DIALOG
+        $('button').click(()=>{
+            $('.pop-up').dialog();
+        })
+        $('#cal').datepicker();
+    </script>   
+</body>
+</html>

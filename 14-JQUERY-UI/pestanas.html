@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pestañas</title>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="pestanas">
+        <ul>
+            <li><a href="#tabs-1">Pestaña 1</a></li>
+            <li><a href="#tabs-2">Pestaña 2</a></li>
+            <li><a href="#tabs-3">Pestaña 3</a></li>
+            <li><a href="#tabs-4">Pestaña 4</a></li>
+            <li><a href="#tabs-5">Pestaña 5</a></li>
+        </ul>
+        <div id="tabs-1">
+            Hola 1
+        </div>
+        <div id="tabs-2">
+            Hola 2
+        </div>
+        <div id="tabs-3">
+            Hola 3
+        </div>
+        <div id="tabs-4">
+            Hola 4
+        </div>
+        <div id="tabs-5">
+            Hola 5
+        </div>
+    </div>
+    <script>
+        $('#pestanas').tabs();
+    </script>
+</body>
+</html>

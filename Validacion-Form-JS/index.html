@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario validado</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>Engine<span>Dev</span></h2>
+        </header>
+        <section class="section">
+            <form action="registro.php" method="POST" id="form">
+                <h2>Registro</h2>
+                <div class="data-name">
+                    <input type="text" name="name" id="name" placeholder="Juan Ramos" autocomplete="off">
+                    <p id="sms-name" class="hide">El campo debe contener solamente letras</p>
+                </div>
+                <div class="data-surname">
+                    <input type="text" name="surname" id="surname" placeholder="De la Plata" autocomplete="off"/>                    
+                    <p id="sms-surname" class="hide">El campo debe contener solamente letras</p>
+                </div>
+                <div class="data-nick">
+                    <input type="text" name="nick" id="nick" placeholder="RamosJuan123" autocomplete="off">
+                    <p id="sms-nick" class="hide">El campo puede contener letras, numeros o simbolos como _ -</p>
+                </div>
+                <div class="data-email">
+                    <input type="email" name="email" id="email" placeholder="JuanRamos@gmail.com" autocomplete="off">
+                    <p id="sms-email" class="hide">Introduzca un email valido</p>
+                </div>
+                <div class="data-pass">
+                    <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="off">
+                    <p id="sms-password" class="hide">El campo debe tener como minimo una mayuscula, minuscula, un numero y un simbolo como # _</p>
+                </div>
+                <div class="data-pass2">
+                    <input type="password" name="password2" id="password2" placeholder="Repetir Contraseña" autocomplete="off">
+                    <p id="sms-password2" class="hide">No coincide con el password</p>
+                </div>
+                <input type="submit" value="Registrarse">
+            </form>
+        </section>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

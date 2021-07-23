@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usando JSON</title>
+</head>
+<body>
+    <div id="container">
+        <h3>Peliculas</h3>
+    </div>
+    <script>
+        var pelicula = {
+            titulo : 'Batman',
+            year : 2019,
+            pais : 'Estados unidos'
+        }
+        let peliculas = [
+            {titulo : 'Red room', year : 2015, 'pais' : 'Roma'},
+            pelicula
+        ]; 
+        const $container = document.getElementById('container');
+        peliculas.forEach((element) => {
+            $container.append(`${element.titulo+', '+element.year+', '+element.pais}`);
+        });
+    </script>
+</body>
+</html>

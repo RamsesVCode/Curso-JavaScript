@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery - Ajax</title>
+    <script type="text/javascript" src="../11-JQUERY/jquery-3.6.0.js"></script>
+    <style>
+        #datos{
+            width: 350px;
+            height: 350px;
+            border:2px solid crimson;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://reqres.in/api/users" method="POST" id="form">
+        Nombre: <input type="text" name="name"><br>
+        Edad: <input type="text" name="edad">
+        <input type="submit" value="Guardar">
+    </form><br>
+    <div id="datos">
+
+    </div>
+    <script>
+        const $data = $('#datos');
+        const $form = $('#form');
+        $form.submit((event)=>{
+            event.preventDefault();
+            var persona = {
+                name : $("input[name='name']").val(),
+                edad : $("input[name='edad']").val()
+            }
+            // $.post($form.attr('action'),persona,(response)=>{
+            //     $data.text(response.name+', '+response.edad)
+            // })
+            $.ajax({
+                type: 'POST',
+                url: $form.attr('action'),
+                data: persona,
+                beforeSend: ()=>{
+                    console.log('Antes de enviar');
+                },
+                success: (response)=>{
+                    console.log('Exitoso');
+                    console.log(response)
+                },
+                error: ()=>{
+                    console.log('Fallo');
+                },
+                timeout:1000
+            })
+        })
+        //CREAMOS EL OBJETO JSON   
+        // var persona = {
+        //     name : 'Juan lopez',
+        //     edad : 25
+        // }
+        // $.post('https://reqres.in/api/users',persona,(response)=>{
+        //     console.log(response)
+        // });
+
+    </script>
+</body>
+</html>
